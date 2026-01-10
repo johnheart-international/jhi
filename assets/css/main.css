@@ -1683,8 +1683,16 @@ input, select, textarea {
     object-fit: cover;
     display: block;
 }
+/* ===== TYPOGRAPHY RESET ===== */
+#about,
+#about p,
+#about li,
+#about span {
+    text-transform: none !important;
+    letter-spacing: 0.02em;
+}
 
-/* Portfolio Text Styling — Only Portfolio */
+/* ===== PORTFOLIO STYLING ===== */
 #portfolio .content p,
 #portfolio .content li,
 #portfolio .content span {
@@ -1696,11 +1704,10 @@ input, select, textarea {
 #portfolio h2,
 #portfolio h3 {
     font-family: 'Montserrat', sans-serif !important;
+    text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
 }
-#about p {
-    text-transform: none;
-    letter-spacing: 0.02em;
+h1, h2, h3 {
+    text-transform: uppercase;
 }
