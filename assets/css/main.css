@@ -1683,24 +1683,21 @@ input, select, textarea {
     display: block;
 }
 
-#portfolio {
-    text-transform: uppercase;
-    letter-spacing: 0.12em;   /* gives that premium spaced look */
-}
-
 /* === Creative Portfolio Font === */
 
-#portfolio {
-    font-family: 'Montserrat', sans-serif;
+section#portfolio {
+    font-family: 'Montserrat', sans-serif !important;
+	text-transform: uppercase;
 }
 
-#portfolio h2,
-#portfolio h3 {
-    font-weight: 500;
-    letter-spacing: 0.18em;
+section#portfolio h2,
+section#portfolio h3 {
+    font-weight: 500 !important;
+    letter-spacing: 0.18em !important;
 }
 
-#portfolio p {
-    letter-spacing: 0.05em;
+section#portfolio p {
+    letter-spacing: 0.05em !important;
 }
+
 
