@@ -1684,22 +1684,23 @@ input, select, textarea {
     display: block;
 }
 
-/* Portfolio – Strong Override */
-#portfolio,
-#portfolio * {
+/* Portfolio Text Styling — Only Portfolio */
+#portfolio .content p,
+#portfolio .content li,
+#portfolio .content span {
+    text-transform: uppercase;
     font-family: 'Montserrat', sans-serif !important;
-    text-transform: uppercase !important;
+    letter-spacing: 0.05em;
 }
 
 #portfolio h2,
 #portfolio h3 {
-    font-weight: 500 !important;
-    letter-spacing: 0.18em !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
 }
-
-#portfolio p {
-    letter-spacing: 0.05em !important;
+#about p {
+    text-transform: none;
+    letter-spacing: 0.02em;
 }
-
-
-
