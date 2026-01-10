@@ -50,6 +50,7 @@ table {
 
 body {
 	-webkit-text-size-adjust: none;
+	text-transform: uppercase;
 }
 
 mark {
