@@ -1684,21 +1684,22 @@ input, select, textarea {
     display: block;
 }
 
-/* === Creative Portfolio Font === */
-
-section#portfolio {
+/* Portfolio – Strong Override */
+#portfolio,
+#portfolio * {
     font-family: 'Montserrat', sans-serif !important;
-	text-transform: uppercase;
+    text-transform: uppercase !important;
 }
 
-section#portfolio h2,
-section#portfolio h3 {
+#portfolio h2,
+#portfolio h3 {
     font-weight: 500 !important;
     letter-spacing: 0.18em !important;
 }
 
-section#portfolio p {
+#portfolio p {
     letter-spacing: 0.05em !important;
 }
+
 
 
