@@ -3,6 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
 
+/*
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -50,7 +55,6 @@ table {
 
 body {
 	-webkit-text-size-adjust: none;
-	text-transform: uppercase;
 }
 
 mark {
@@ -1683,31 +1687,20 @@ input, select, textarea {
     object-fit: cover;
     display: block;
 }
-/* ===== TYPOGRAPHY RESET ===== */
-#about,
-#about p,
-#about li,
-#about span {
-    text-transform: none !important;
-    letter-spacing: 0.02em;
+
+/* === Creative Portfolio Font === */
+
+section#portfolio {
+    font-family: 'Montserrat', sans-serif !important;
+	text-transform: uppercase;
 }
 
-/* ===== PORTFOLIO STYLING ===== */
-#portfolio .content p,
-#portfolio .content li,
-#portfolio .content span {
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif !important;
-    letter-spacing: 0.05em;
+section#portfolio h2,
+section#portfolio h3 {
+    font-weight: 500 !important;
+    letter-spacing: 0.18em !important;
 }
 
-#portfolio h2,
-#portfolio h3 {
-    font-family: 'Montserrat', sans-serif !important;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-}
-h1, h2, h3 {
-    text-transform: uppercase;
+section#portfolio p {
+    letter-spacing: 0.05em !important;
 }
