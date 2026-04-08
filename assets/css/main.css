@@ -27,9 +27,12 @@ section, summary, time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;}
 
+
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
+
 
 body {
 	line-height: 1;
@@ -110,6 +113,7 @@ input, select, textarea {
 			-ms-transition: none !important;
 			transition: none !important;
 		}
+
 
 /* Type */
 
@@ -1690,17 +1694,55 @@ input, select, textarea {
 
 /* === Creative Portfolio Font === */
 
-section#portfolio {
+section#production {
     font-family: 'Montserrat', sans-serif !important;
 	text-transform: uppercase;
 }
 
-section#portfolio h2,
-section#portfolio h3 {
+section#production h2,
+section#production h3 {
     font-weight: 500 !important;
     letter-spacing: 0.18em !important;
 }
 
-section#portfolio p {
+section#production p {
     letter-spacing: 0.05em !important;
 }
+
+/* Container: horizontal layout */
+ul.samples {
+	display: flex;            /* flexbox for equal-width buttons */
+	flex-wrap: wrap;          /* wrap to next row if needed */
+	gap: 10px;                /* space between buttons */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+  }
+  
+  /* Each list item takes equal width */
+  ul.samples li {
+	flex: 1 1 150px;          /* grow/shrink, min width 150px */
+  }
+  
+  /* Style the button text */
+  ul.samples li a .label {
+	display: block;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;        /* bold */
+	font-size: 1.3rem;       /* larger text */
+	color: #858383;           /* light grey */
+	padding: 12px 0;
+	border: 2px solid #A19797;
+	text-decoration: none;
+	width: 100%;
+	box-sizing: border-box;
+	transition: 0.2s;
+  }
+  
+  /* Hover effect */
+  ul.samples li a .label:hover {
+	background-color: #A19797;
+	color: #fff;
+	cursor: pointer;
+  }
