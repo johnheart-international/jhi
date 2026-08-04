@@ -398,4 +398,32 @@
 						$main._show(location.hash.substr(1), true);
 					});
 
-})(jQuery);
+		// Initialize.
+
+			// Hide main, articles.
+			$main.hide();
+			$main_articles.hide();
+
+		// Initial article.
+			if (location.hash != ''
+			&&	location.hash != '#')
+				$window.on('load', function() {
+					$main._show(location.hash.substr(1), true);
+				});
+
+	// --- ADDED BY YOU: INTERACTIVE AUTOPLAY/UNMUTE VIDEOS ---
+	$('.interactive-video-card').on('click', function() {
+		var $card = $(this);
+		var video = $card.find('video')[0]; // Grabs the raw HTML video element
+
+		if (video && !$card.hasClass('activated')) {
+			$card.addClass('activated');
+			
+			video.muted = false;   // Unmutes the video track instantly
+			video.loop = false;    // Disables looping so it runs normally
+			video.controls = true; // Displays play/pause seek bars
+			video.play();          // Seamlessly continues playback with sound
+		}
+	});
+
+})(jQuery); // This is the existing final line of your file
