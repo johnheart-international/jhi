@@ -1,0 +1,352 @@
+.sparkle-container{
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+
+    font-family: 'Poppins', sans-serif;
+
+    cursor: none;
+
+    background: #fff;
+}
+
+.sparkle{
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    color:#ffe9f5;
+
+    pointer-events:none;
+
+    z-index:1;
+
+    will-change:transform;
+
+    filter:drop-shadow(0 0 8px rgba(255,255,255,.8));
+
+}
+
+
+/* HERO BACKGROUND */
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ffb3dc 0%,
+            #ff6bb5 35%,
+            #ff1493 70%,
+            #ff0f87 100%
+        );
+}
+
+/* HERO HEADLINE */
+.hero h1{
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:7rem;
+
+    line-height:.9;
+
+    color:white;
+
+    margin:.2em 0;
+
+}
+
+/* CHROME ANIMATION ON SNATCHED */
+.hero h1 span{
+
+    background: linear-gradient(
+        90deg,
+        #ffffff 0%,
+        #ffe3f2 30%,
+        #ffffff 50%,
+        #ffd2ea 70%,
+        #ffffff 100%
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:shine 7s linear infinite;
+
+}
+
+/* MAKE SNATCHED SHIMMER */
+@keyframes shine{
+
+    from{
+        background-position:300%;
+    }
+
+    to{
+        background-position:-300%;
+    }
+
+}
+
+/* PARAGRAPH */
+.hero p{
+
+    color:white;
+
+    font-size:1.2rem;
+
+    max-width:500px;
+
+    margin:auto;
+
+}
+
+/* TAGLINE */
+.tagline{
+
+    color:white;
+
+    letter-spacing:3px;
+
+    font-size:.85rem;
+
+}
+
+
+/* SHOP BUTTON */
+.hero-button{
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #ffe4f2
+    );
+
+    color: #ff1493;
+
+    font-weight: 700;
+
+    letter-spacing: .75px;
+
+    transition: all .5s ease;
+
+    padding: 8px 12px; /* PILL-SHAPED BUTTON */
+
+    border-radius: 8888px;
+
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    cursor: inherit;
+}
+
+/* SHOP COLLECTION BUTTON */
+.hero-button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        transparent,
+
+        rgba(255,255,255,.8),
+
+        transparent
+
+    );
+
+    transform:skewX(-20deg);
+
+}
+/* SHOP BUTTON HOVER*/
+.hero-button:hover{
+    transform: translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(255,20,147,.35);
+}
+
+/* SHOP BUTTON ANIMATION */
+@keyframes buttonShine{
+
+    to{
+
+        left:170%;
+
+    }
+
+}
+
+/* HOVER EFFECT */
+.hero-button:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 35px rgba(0,0,0,.18);
+
+}
+
+/* MAKE THE TITLE ANMIATE IN */
+.hero-content{
+
+    animation:fadeUp 1s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* BLOBS */
+.blob{
+
+    position:absolute;
+
+    z-index: 2;
+
+    border-radius:50%;
+
+    filter:blur(50px);
+
+    opacity:.35;
+
+    animation:floatBlob 12s ease-in-out infinite;
+
+}
+
+/* ANIMATION */
+@keyframes floatBlob{
+
+    0%{
+        transform:translateY(0) scale(1);
+    }
+
+    50%{
+        transform:translateY(-40px) scale(1.08);
+    }
+
+    100%{
+        transform:translateY(0) scale(1);
+    }
+
+} 
+
+.hero-card{
+    z-index: 3;
+    position: relative;
+    background: rgba(255,255,255,.22);
+    backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255,255,255,.4);
+
+    border-radius: 35px;
+
+    padding: 70px;
+
+    max-width: 700px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.18),
+        0 0 80px rgba(255,255,255,.12);
+}
+
+/* SCROLL INDICATOR */
+
+.scroll-indicator{
+    margin-top:40px;
+
+    color:rgba(255,255,255,.8);
+
+    font-size:.9rem;
+
+    animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(8px);
+    }
+
+}
+
+/* CUSTOM STAR CURSOR */
+
+#cursor-star {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    font-size: 24px;
+
+    pointer-events: none;
+
+    z-index: 99999;
+
+    transform: translate(-100px, -100px);
+
+    filter: drop-shadow(0 0 10px #ff1493);
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+}
