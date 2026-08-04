@@ -1806,4 +1806,294 @@ ul.samples li a:hover .label {
 	  transform: translateX(-100%);
 	}
   }
+
+ /* --- EVENTS WITH TWO COLUMNS --- */
+#events.expanded-events-view {
+	max-width: 1200px; 
+	width: 100%;
+	margin: 0 auto;    
+  }
+  
+  /* Two-column framework */
+  .events-gallery {
+	display: flex;
+	gap: 60px; 
+  }
+  
+  .gallery-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 25px; 
+  }
+  
+  .column-heading {
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 5px;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+	padding-bottom: 8px;
+  }
+  
+  /* Base style for media content inside wrappers */
+  .pop-out-effect img,
+  .pop-out-effect video {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 6px; /* Clean, rounded edges */
+  }
+  
+  
+  /* --- POP OUT EXPANSION ENGINE --- */
+  
+  .pop-out-effect {
+	display: block;
+	width: 100%;
+	position: relative;
+	z-index: 1; /* Default layer position */
+	
+	/* Creates a silky smooth scaling animation */
+	transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+	transform: scale(1);
+  }
+  
+  /* Triggers when mouse hovers over the block */
+  .pop-out-effect:hover {
+	transform: scale(1.3) !important; 
+	z-index: 10; /* Lifts it upward so it floats on top of other elements */
+	cursor: pointer;
+	
+	/* Adds a premium soft shadow effect underneath the popped-out media */
+	box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4); 
+  }
+  
+  
+  /* --- MOBILE STACKING RULES --- */
+  @media screen and (max-width: 736px) {
+	.events-gallery {
+	  flex-direction: column; 
+	}
+	
+	/* Prevents accidental clipping issues on narrow screens during expansion */
+	.pop-out-effect:hover {
+	  transform: scale(1.1); /* Slightly gentler scale on mobile devices */
+	}
+  }
+  
+  
+  
+
+/* --- GLOBAL SECTION EXPANSION --- */
+#dj.expanded-events-view {
+	max-width: 1200px; 
+	width: 100%;
+	margin: 0 auto;    
+  }
+  
+  /* --- TWO-COLUMN SAMPLES LIST --- */
+  .two-col-samples {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Splits the links evenly into 2 columns */
+	gap: 15px 30px; /* Vertically gaps items by 15px, horizontally by 30px */
+	list-style: none;
+	padding: 0;
+  }
+  
+  /* --- SIDE-BY-SIDE EVENT GALLERY --- */
+  .event-gallery {
+	display: flex;
+	gap: 30px; 
+  }
+  
+  .gallery-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 25px; 
+  }
+  
+  .column-heading {
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 5px;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+	padding-bottom: 8px;
+  }
+  
+  /* Base structural sizing for cards */
+  .gallery-card {
+	width: 100%;
+	display: block;
+  }
+  
+  .gallery-card img,
+  .gallery-card video {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 6px 6px 0 0; /* Smooth top corners above caption */
+  }
+  
+  /* Caption styling attached to cards */
+  .card-caption {
+	padding: 12px;
+	background: rgba(255, 255, 255, 0.05); /* Soft background to hold text */
+	border-radius: 0 0 6px 6px; /* Smooth bottom corners */
+	font-size: 0.95rem;
+	font-weight: 500;
+	text-align: center;
+  }
+  
+  
+  /* --- POP OUT EXPANSION ENGINE --- */
+  .pop-out-effect {
+	position: relative;
+	z-index: 1;
+	transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+	transform: scale(1);
+  }
+  
+  /* Entire card (including caption) expands together */
+  .pop-out-effect:hover {
+	transform: scale(1.05); 
+	z-index: 10; 
+	cursor: pointer;
+	box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5); 
+  }
+  
+  
+  /* --- TWO-COLUMN SAMPLES LIST --- */
+.two-col-samples {
+	display: grid !important;                  /* Forces grid rendering layout */
+	grid-template-columns: repeat(2, 1fr);     /* Splits the list exactly down the middle */
+	gap: 15px 30px;                            /* 15px vertical space, 30px horizontal space */
+	list-style: none;
+	padding: 0;
+	margin: 0 0 2rem 0;                        /* Bottom spacing before the next heading */
+  }
+  
+  /* Fix for standard template list styling if needed */
+  .two-col-samples li {
+	padding-left: 0 !important;                /* Removes template default indented padding */
+	margin-bottom: 0;
+  }
+
+  /* --- RESPONSIVE MOBILE FEED OVERRIDES --- */
+  @media screen and (max-width: 736px) {
+	.two-col-samples {
+	  grid-template-columns: 1fr !important; /* Stacks sample links back to 1 column on small phone screens */
+	}
+	
+	.event-gallery {
+	  flex-direction: column; /* Collapses media grid into a clean layout block stack */
+	}
+	
+	.pop-out-effect:hover {
+	  transform: scale(1.15); /* Slight scale reduction to prevent mobile screen edge clipping */
+	}
+  }
+
+  /* Custom cursor modification for the background video state */
+.interactive-video-card video {
+	cursor: pointer;
+  }
+  
+  /* Once activated, let standard player UI handle the pointer interactions */
+  .interactive-video-card.activated video {
+	cursor: default;
+  }
+
+  /* --- FIXED CSS CONTAINER EXPANSION --- */
+
+/* --- TEMPLATE-SAFE CONTAINER EXPANSION --- */
+
+/* Safe expansion rules nested cleanly within active section tags */
+#main article.active.expanded-events-view {
+	max-width: 1200px;
+	width: 100%;
+  }
+  
+  #main article.expanded-events-view {
+	width: 100%;
+  }
+  
+  /* Two-column gallery flexbox */
+  .event-gallery {
+	display: flex;
+	gap: 30px; 
+  }
+  
+  .gallery-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 25px; 
+  }
+  
+  /* Responsive mobile stack framework overrides */
+  @media screen and (max-width: 736px) {
+	.event-gallery {
+	  flex-direction: column;
+	}
+  }
+  
+
+  /* --- DYNAMIC PRODUCTION GRID --- */
+.production-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Forms 2 permanent equal columns */
+	gap: 30px;                             /* Space between grid items */
+	width: 100%;
+  }
+  
+  /* Base image rules */
+  .production-grid .gallery-card img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 6px 6px 0 0;
+  }
+  
+  /* Caption block framing */
+  .production-grid .card-caption {
+	padding: 12px;
+	background: rgba(255, 255, 255, 0.05); 
+	border-radius: 0 0 6px 6px; 
+	font-size: 0.9rem;
+	font-weight: 500;
+	text-align: center;
+  }
+  
+  /* --- POP OUT EXPANSION ATTACHMENT --- */
+  .pop-out-effect {
+	position: relative;
+	z-index: 1;
+	transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+	transform: scale(1);
+  }
+  
+  /* Enlarges the whole image + caption block smoothly over the background */
+  .pop-out-effect:hover {
+	transform: scale(1.05) !important;
+	z-index: 10;
+	cursor: pointer;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  /* --- MOBILE RESPONSIVE ADAPTATION --- */
+  @media screen and (max-width: 736px) { /* Fits Dimension Mobile Breakpoint */
+	.production-grid {
+	  grid-template-columns: 1fr !important; /* Stacks to a clean 1-column layout on phones */
+	  gap: 20px;
+	}
+	
+	.pop-out-effect:hover {
+	  transform: scale(1.02) !important; /* Prevents overflow clipping on small viewports */
+	}
+  }
   
