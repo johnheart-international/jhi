@@ -2096,4 +2096,31 @@ ul.samples li a:hover .label {
 	  transform: scale(1.02) !important; /* Prevents overflow clipping on small viewports */
 	}
   }
-  
+
+
+/* Custom Site Footer Fix */
+#site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.4); /* Dark translucent background to match the theme */
+    backdrop-filter: blur(4px);    /* Optional elegant glass effect */
+    z-index: 10000;                /* Forces it on top of the background layer */
+    font-family: "Poppins", sans-serif;
+}
+
+#site-footer .footer-content p {
+    margin: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Push the wrapper up slightly so elements don't overlap the fixed footer on mobile */
+#wrapper {
+    padding-bottom: 60px !important;
+}
