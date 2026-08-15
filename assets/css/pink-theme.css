@@ -1,13 +1,17 @@
-.sparkle-container{
-    position:fixed;
-    inset:0;
-
-    overflow:hidden;
-
-    pointer-events:none;
-
-    z-index:1;
-}
+.sparkle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    /* Higher than your z-index 1 images, ensuring they dance smoothly in front of them */
+    z-index: 9999; 
+    
+    /* CRITICAL: Allows clicks/taps to pass right through the sparkles to your links below */
+    pointer-events: none; 
+  }
+  
 
 body {
     margin: 0;
@@ -17,7 +21,7 @@ body {
 
     cursor: none;
 
-    background: #fff;
+    background: #ff0f87;
 }
 
 .sparkle{
@@ -61,6 +65,28 @@ body {
             #ff1493 70%,
             #ff0f87 100%
         );
+}
+
+.hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:180px;
+
+  pointer-events:none;
+
+  background:linear-gradient(
+      to bottom,
+      rgba(255,15,135,0),
+      #ff0f87
+  );
+
 }
 
 /* HERO HEADLINE */
@@ -133,6 +159,71 @@ body {
     letter-spacing:3px;
 
     font-size:.85rem;
+
+}
+
+/* BACK TO JOHN HEART INTERNATIONAL HOMEPAGE */
+.home-button{
+
+    position: fixed;
+
+    top: 30px;
+    right: 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 22px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: .95rem;
+
+    color: #ffffff;
+
+    background: rgba(255,255,255,.18);
+
+    backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+        0 10px 30px rgba(255,20,147,.18);
+
+    transition: all .3s ease;
+
+    z-index: 9990;
+}
+.home-button:hover{
+
+    transform: translateY(-3px);
+
+    background: rgba(255,255,255,.28);
+
+    box-shadow:
+        0 18px 40px rgba(255,20,147,.35);
+
+}
+.home-button::before{
+
+    content:"✦";
+
+    margin-right:8px;
+
+    color:#ffd6ef;
+
+    transition:.35s ease;
+
+}
+
+.home-button:hover::before{
+
+    transform: rotate(180deg) scale(1.2);
 
 }
 
@@ -350,3 +441,748 @@ h1 {
     margin-top: 100px;
     font-family: Arial, sans-serif;
 }
+
+/* ==========================================================================
+   STAY SNATCHED MEDIA SECTION
+   ========================================================================== */
+
+/* Main Container Layout */
+/* ==========================================================================
+   STAY SNATCHED BRAND & MEDIA SECTION
+   ========================================================================== */
+
+/* Main Container Layout */
+  /* 1. The Wrapper: Stretches edge-to-edge across the monitor screen */
+  .brand-section-wrapper{
+    background:linear-gradient(
+        to bottom,
+        #ff0f87 0%,
+        #ff087f 100%
+    );
+}
+
+  /* Sets the layout section wrapper background color to match your header */
+.brand-section {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    
+    /* Matches the background look of your hero header portion */
+    background:transparent; 
+    
+    position: relative;
+    z-index: 1; /* Keeps the container layered beneath the fixed sparkles */
+  }
+  
+/* Soft Pastel Pink Glassmorphism Box */
+.media-box.transparent-glass {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    
+    /* Swapped hot pink for a soft, creamy white-pink hue that softens the overall card backdrop */
+    background: rgba(255, 240, 245, 0.25); 
+    backdrop-filter: blur(12px); /* Higher blur matches the smooth glassmorphism style */
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* Uses a very delicate soft pink border to tie it neatly into your page colors */
+    border: 1px solid rgba(255, 182, 193, 0.4); 
+    border-radius: 24px;
+    padding: 40px;
+    
+    /* A lighter shadow prevents the hot pink from overpowering the canvas */
+    box-shadow: 0 8px 32px rgba(255, 182, 193, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    
+    position: relative;
+    z-index: 1; 
+  }
+  
+  /* Hover modification for subtle interaction */
+  .media-box.transparent-glass:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 182, 193, 0.7); /* Slightly sharpens the soft pink border on hover */
+  }
+  
+  
+  /* Image Frame */
+  .media-img-wrapper {
+    flex: 1;
+    min-width: 300px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+  
+  .media-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .media-box:hover .media-img {
+    transform: scale(1.02);
+  }
+  
+  /* Typography elements */
+  .media-content {
+    flex: 1.2;
+  }
+  
+  .media-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.2rem;
+    letter-spacing: 2px;
+    margin: 0 0 16px 0;
+    line-height: 1;
+    color: #ffffff; /* Swapped to white to blend better with deep pink themes */
+  }
+  
+  .media-title span {
+    color: #ff69b4;
+    display: block;
+  }
+  
+  .media-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85); /* Slightly muted text for visual contrast */
+    margin: 0 0 24px 0;
+  }
+  
+  .media-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .media-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ff69b4;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .media-link:hover {
+    color: #ff69b4;
+  }
+  
+  .media-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  
+  /* ==========================================================================
+     2. BRAND IMAGES GRID LAYOUT
+     ========================================================================== */
+  .brand-showcase{
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-bottom: 80px;
+  gap:30px;
+
+  background:transparent;
+  
+  }
+  
+  .showcase-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3-column layout for desktop views */
+    gap: 20px;
+    width: 100%;
+  }
+
+
+/* Replace your .grid-item wrapper code with this */
+.grid-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: transparent;
+    z-index: 1;
+    
+    /* Bubbly Squircle Edge Path */
+    border-radius: 40% 40% 40% 40% / 40% 40% 40% 40%;
+    overflow: hidden;
+    border: 1px solid rgba(255, 182, 193, 0.4);
+    
+    /* Retains your glowing shadow effects */
+    filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.5));
+    transition: border-color 0.4s ease;
+  }
+  
+  /* Kept your fun springy bounce interaction intact! */
+  .grid-item:hover {
+    animation: bubbleBounce 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    border-color: rgba(255, 105, 180, 0.7);
+    filter: drop-shadow(0 0 25px rgba(255, 182, 193, 0.85));
+  }
+  
+
+  
+  /* Define the spring scale keyframes */
+  @keyframes bubbleBounce {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1.12); /* Overshoots slightly past its max size */
+    }
+    60% {
+      transform: scale(1.05); /* Drops down slightly below the overshoot */
+    }
+    100% {
+      transform: scale(1.08); /* Settles cleanly at a happy, popped-out size */
+    }
+  }
+  
+  
+  /* The actual image wrapper where the smooth bubble mask is applied */
+  .grid-img-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+    /* Points to the invisible SVG bubble star layout path we added to the HTML */
+    clip-path: url(#bubble-star);
+    -webkit-clip-path: url(#bubble-star);
+  }
+  
+  .grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  
+  /* The image zoom animation still tracks smoothly within the round bubble mask */
+  .grid-item:hover .grid-img {
+    transform: scale(1.1);
+  }
+  
+  
+  
+  
+  /* ==========================================================================
+     RESPONSIVE DESIGN (TABLETS & MOBILE)
+     ========================================================================== */
+  @media (max-width: 992px) {
+    .brand-grid {
+      grid-template-columns: repeat(2, 1fr); /* Splits into a 2x2 layout on mobile tablets */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .brand-section {
+      padding: 40px 15px;
+      gap: 50px;
+    }
+  
+    .media-box.transparent-glass {
+      flex-direction: column;
+      padding: 24px;
+      gap: 24px;
+    }
+  
+    .media-img-wrapper {
+      width: 100%;
+      height: 350px;
+      min-width: 100%;
+    }
+  
+    .media-title {
+      font-size: 2.5rem;
+    }
+  
+    .brand-grid {
+      grid-template-columns: 1fr; /* Single stacked image list on phones */
+      gap: 16px;
+    }
+  }
+  
+  /* SHE'S HERE STYLIZING */
+  /* ==========================================================================
+   CUTE FLOATING & SPARKLE HEADLINE
+   ========================================================================== */
+
+.cute-floating-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.2rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 182, 193, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    
+    /* Applies a soft, bouncy floating wave animation */
+    animation: cuteFloat 4s ease-in-out infinite;
+  }
+  
+  /* The Sparkle Stars Style & Animation */
+  .spinning-star {
+    display: inline-block;
+    
+    /* Shrinks the base size of the font character */
+    font-size: 0.35em; 
+    
+    /* Slightly aligns it vertically so it balances nicely with the uppercase text height */
+    vertical-align: middle; 
+    
+    color: #ffc2e1;
+    text-shadow: 0 0 10px rgba(255, 180, 217, 0.8);
+    animation: starSpin 5s linear infinite;
+  }
+
+  /* Updates the spin animation scale values so the star doesn't puff up too large mid-spin */
+@keyframes starSpin {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.1) rotate(180deg); /* Much gentler pulse size */
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+  
+  /* Delays the second star slightly so they don't look completely rigid and robotic */
+  .spinning-star.delayed {
+    animation-delay: 0.5s;
+  }
+  
+  
+  /* ==========================================================================
+     ANIMATION TIMELINES (KEYFRAMES)
+     ========================================================================== */
+  
+  /* Gentle bubble floating motion for the whole title */
+  @keyframes cuteFloat {
+    0% {
+      transform: translateY(0px);
+      text-shadow: 0 0 10px rgba(255, 182, 193, 0.6);
+    }
+    50% {
+      transform: translateY(-8px); /* Rises up elegantly */
+      text-shadow: 0 0 18px rgba(255, 105, 180, 0.9), 0 0 30px rgba(255, 182, 193, 0.4); /* Glow expands at peak height */
+    }
+    100% {
+      transform: translateY(0px);
+      text-shadow: 0 0 10px rgba(255, 182, 193, 0.6);
+    }
+  }
+  
+  /* Continuous 360-degree rotation for the custom stars */
+  @keyframes starSpin {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      transform: scale(1.25) rotate(180deg); /* Pulsates slightly larger mid-spin */
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+
+/* ==========================================================================
+   STAY SNATCHED FOOTER
+   ========================================================================== */
+
+   .snatched-footer{
+
+    background:#b80063;
+
+    color:white;
+
+    padding:80px 8% 30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* Subtle glow behind footer */
+
+.snatched-footer::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    top:-300px;
+    right:-150px;
+
+    background:#ff1493;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    opacity:.25;
+
+    pointer-events:none;
+
+}
+
+
+/* Main footer layout */
+
+.footer-content{
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:60px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* Brand */
+
+.footer-brand{
+
+    max-width:400px;
+
+}
+
+.footer-star{
+
+    display:inline-block;
+
+    font-size:1.4rem;
+
+    color:#ffc2e1;
+
+    animation:footerStarSpin 5s linear infinite;
+
+}
+
+.footer-brand h2{
+
+    font-family:'Bebas Neue',sans-serif;
+
+    font-size:3.5rem;
+
+    letter-spacing:4px;
+
+    margin:8px 0;
+
+    color:white;
+
+}
+
+.footer-brand p{
+
+    margin:0;
+
+    color:rgba(255,255,255,.7);
+
+    font-size:.95rem;
+
+}
+
+
+/* Social section */
+
+.footer-social{
+
+    text-align:right;
+
+}
+
+.social-label{
+
+    font-size:.75rem;
+
+    letter-spacing:3px;
+
+    color:#ffc2e1;
+
+    margin:0 0 22px;
+
+}
+
+.social-links{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+.social-link{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  color:#ffffff;
+
+  text-decoration:none;
+
+  font-family:'Poppins',sans-serif;
+
+  font-size:1rem;
+
+  font-weight:600;
+
+  position:relative;
+
+  transition:
+      color .3s ease,
+      transform .3s ease;
+
+}
+
+
+/* Underline animation */
+
+.social-link::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-6px;
+
+    width:100%;
+    height:2px;
+
+    background:#ffc2e1;
+
+    transform:scaleX(0);
+
+    transform-origin:right;
+
+    transition:transform .3s ease;
+
+}
+
+/* INSTAGRAM ICON */
+
+.instagram-icon{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  width:20px;
+
+  height:20px;
+
+  border:1.5px solid #ffffff;
+
+  border-radius:8px;
+
+  font-size:22px;
+
+  line-height:1;
+
+  transition:
+      transform .35s ease,
+      border-color .3s ease;
+
+}
+
+
+/* ARROW */
+
+.social-arrow{
+
+  color:#ffc2e1;
+
+  transition:
+      transform .3s ease;
+
+}
+
+
+/* HOVER */
+
+.social-link:hover{
+
+  color:#ffc2e1;
+
+  transform:translateY(-4px);
+
+}
+
+
+.social-link:hover .instagram-icon{
+
+  transform:rotate(-8deg) scale(1.1);
+
+  border-color:#ffc2e1;
+
+}
+
+
+.social-link:hover .social-arrow{
+
+  transform:translateX(5px);
+
+}
+
+
+/* Footer bottom */
+
+.footer-bottom{
+
+    max-width:1200px;
+
+    margin:70px auto 0;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.18);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    font-size:.75rem;
+
+    color:rgba(255,255,255,.5);
+
+}
+
+
+/* Star animation */
+
+@keyframes footerStarSpin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* ==========================================================================
+   FOOTER RESPONSIVE
+   ========================================================================== */
+
+@media (max-width:768px){
+
+    .snatched-footer{
+
+        padding:60px 25px 25px;
+
+    }
+
+    .footer-content{
+
+        flex-direction:column;
+
+        gap:45px;
+
+    }
+
+    .footer-social{
+
+        text-align:left;
+
+    }
+
+    .social-link{
+      color:white;
+  
+      text-decoration:none;
+  
+      font-weight:600;
+  
+      font-size:1rem;
+  
+      position:relative;
+  
+      transition:
+          transform .3s ease,
+          color .3s ease;
+  }
+  
+  .social-link:hover{
+  
+      color:#ffc2e1;
+  
+      transform:translateY(-4px);
+  
+  }
+
+    .footer-brand h2{
+
+        font-size:2.8rem;
+
+    }
+
+    .footer-bottom{
+
+        margin-top:100px;
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+}
+  
