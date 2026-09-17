@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /*
 	Dimension by HTML5 UP
 	html5up.net | @ajlkn
@@ -101,7 +101,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #1b1f22;
+		background: #a39ba0;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -148,7 +148,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #ffffff;
-		font-family: "Roboto", sans-serif;
+		font-family: "Poppins", sans-serif;
 		font-weight: 300;
 		font-size: 1rem;
 		line-height: 1.65;
@@ -1126,7 +1126,7 @@ input, select, textarea {
 		-webkit-transform: scale(1.0);
 		-ms-transform: scale(1.0);
 		transform: scale(1.0);
-		-webkit-backface-visibility: hidden;
+		-webkit-backface-visibility:visible;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -1146,10 +1146,10 @@ input, select, textarea {
 		}
 
 		#bg:before {
-			-moz-transition: background-color 2.5s ease-in-out;
-			-webkit-transition: background-color 2.5s ease-in-out;
-			-ms-transition: background-color 2.5s ease-in-out;
-			transition: background-color 2.5s ease-in-out;
+			-moz-transition: background-color 1.5s ease-in-out;
+			-webkit-transition: background-color 1.5s ease-in-out;
+			-ms-transition: background-color 1.5s ease-in-out;
+			transition: background-color 1.5s ease-in-out;
 			-moz-transition-delay: 0.75s;
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
@@ -1562,7 +1562,7 @@ input, select, textarea {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: rgba(27, 31, 34, 0.85);
+			background-color: rgba(158, 144, 133, 0.05);
 			border-radius: 4px;
 			opacity: 0;
 		}
@@ -1704,7 +1704,7 @@ input, select, textarea {
 /* === Creative Portfolio Font === */
 
 section#production {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
 	text-transform: uppercase;
 }
 
@@ -1718,43 +1718,36 @@ section#production p {
     letter-spacing: 0.05em !important;
 }
 
-/* Container: horizontal layout */
+
+
+/* Sample mix links button styling */
 ul.samples {
-	display: flex;            /* flexbox for equal-width buttons */
-	flex-wrap: wrap;          /* wrap to next row if needed */
-	gap: 10px;                /* space between buttons */
-	padding: 0;
-	margin: 0;
+	display: flex;
+	flex-direction: column; 
+	text-align: left;           
+	gap: 8px;                /* space between buttons */
+	padding: 2px;
+	margin: 2px;
 	list-style: none;
-  }
-  
-  /* Each list item takes equal width */
-  ul.samples li {
-	flex: 1 1 110px;          /* grow/shrink, min width 150px */
   }
   
   /* Style the button text */
   ul.samples li a .label {
 	display: block;
-	text-align: center;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;        /* bold */
-	font-size: 1.3rem;       /* larger text */
-	color: #858383;           /* light grey */
+	text-align: left;
+	font-family: "Poppins", sans-serif;
+	font-weight: 600;        /* bold */
+	font-size: 1.05rem;       /* slightly larger text */
+	color: #dadada;           /* light grey */
 	padding: 12px 0;
-	border: 2px solid #A19797;
-	border-radius: 15px;
-	text-decoration: none;
 	width: 100%;
 	box-sizing: border-box;
-	transition: 0.2s;
+	transition: color 0.2s ease;
   }
-  
-  /* Hover effect */
-  ul.samples li a .label:hover {
-	background-color: #A19797;
-	color: #fff;
-	cursor: pointer;
+
+/* Hover state styling */
+ul.samples li a:hover .label {
+	color: #9E9085;           /* New text color on hover (e.g., pure white) */
   }
 
   /* Container: horizontal layout */
@@ -1775,12 +1768,12 @@ ul.samples {
 	left: 0;
 	width: 100%;
 	background-color: #727171; /* Dark sleek background */
-	color: #fff;
+	color: #f8f8f8;	
 	overflow: hidden; /* Prevents scrollbars from appearing */
 	z-index: 9999; /* Keeps banner above all other content */
-	padding: 10px 0;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: normal;
+	padding: 8px 0;
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
   }
   
   /* 2. Create a flexible row container for the text blocks */
@@ -1793,10 +1786,10 @@ ul.samples {
   .banner-content {
 	display: flex;
 	justify-content: space-around;
-	gap: 40px; /* Space between announcements */
-	padding-right: 40px; /* Must match the gap size */
+	gap: 50px; /* Space between announcements */
+	padding-right: 50px; /* Must match the gap size */
 	white-space: nowrap;
-	animation: scroll-left 35s linear infinite;
+	animation: scroll-left 62s linear infinite;
   }
   
   /* 4. Pause the banner movement when a user hovers over it */
@@ -1813,4 +1806,321 @@ ul.samples {
 	  transform: translateX(-100%);
 	}
   }
+
+ /* --- EVENTS WITH TWO COLUMNS --- */
+#events.expanded-events-view {
+	max-width: 1200px; 
+	width: 100%;
+	margin: 0 auto;    
+  }
   
+  /* Two-column framework */
+  .events-gallery {
+	display: flex;
+	gap: 60px; 
+  }
+  
+  .gallery-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 25px; 
+  }
+  
+  .column-heading {
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 5px;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+	padding-bottom: 8px;
+  }
+  
+  /* Base style for media content inside wrappers */
+  .pop-out-effect img,
+  .pop-out-effect video {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 6px; /* Clean, rounded edges */
+  }
+  
+  
+  /* --- POP OUT EXPANSION ENGINE --- */
+  
+  .pop-out-effect {
+	display: block;
+	width: 100%;
+	position: relative;
+	z-index: 1; /* Default layer position */
+	
+	/* Creates a silky smooth scaling animation */
+	transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+	transform: scale(1);
+  }
+  
+  /* Triggers when mouse hovers over the block */
+  .pop-out-effect:hover {
+	transform: scale(1.3) !important; 
+	z-index: 10; /* Lifts it upward so it floats on top of other elements */
+	cursor: pointer;
+	
+	/* Adds a premium soft shadow effect underneath the popped-out media */
+	box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4); 
+  }
+  
+  
+  /* --- MOBILE STACKING RULES --- */
+  @media screen and (max-width: 736px) {
+	.events-gallery {
+	  flex-direction: column; 
+	}
+	
+	/* Prevents accidental clipping issues on narrow screens during expansion */
+	.pop-out-effect:hover {
+	  transform: scale(1.1); /* Slightly gentler scale on mobile devices */
+	}
+  }
+  
+  
+  
+
+/* --- GLOBAL SECTION EXPANSION --- */
+#dj.expanded-events-view {
+	max-width: 1200px; 
+	width: 100%;
+	margin: 0 auto;    
+  }
+  
+  /* --- TWO-COLUMN SAMPLES LIST --- */
+  .two-col-samples {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Splits the links evenly into 2 columns */
+	gap: 15px 30px; /* Vertically gaps items by 15px, horizontally by 30px */
+	list-style: none;
+	padding: 0;
+  }
+  
+  /* --- SIDE-BY-SIDE EVENT GALLERY --- */
+  .event-gallery {
+	display: flex;
+	gap: 30px; 
+  }
+  
+  .gallery-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 25px; 
+  }
+  
+  .column-heading {
+	font-size: 1.4rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 5px;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+	padding-bottom: 8px;
+  }
+  
+  /* Base structural sizing for cards */
+  .gallery-card {
+	width: 100%;
+	display: block;
+  }
+  
+  .gallery-card img,
+  .gallery-card video {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 6px 6px 0 0; /* Smooth top corners above caption */
+  }
+  
+  /* Caption styling attached to cards */
+  .card-caption {
+	padding: 12px;
+	background: rgba(255, 255, 255, 0.05); /* Soft background to hold text */
+	border-radius: 0 0 6px 6px; /* Smooth bottom corners */
+	font-size: 0.95rem;
+	font-weight: 500;
+	text-align: center;
+  }
+  
+  
+  /* --- POP OUT EXPANSION ENGINE --- */
+  .pop-out-effect {
+	position: relative;
+	z-index: 1;
+	transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+	transform: scale(1);
+  }
+  
+  /* Entire card (including caption) expands together */
+  .pop-out-effect:hover {
+	transform: scale(1.05); 
+	z-index: 10; 
+	cursor: pointer;
+	box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5); 
+  }
+  
+  
+  /* --- TWO-COLUMN SAMPLES LIST --- */
+.two-col-samples {
+	display: grid !important;                  /* Forces grid rendering layout */
+	grid-template-columns: repeat(2, 1fr);     /* Splits the list exactly down the middle */
+	gap: 15px 30px;                            /* 15px vertical space, 30px horizontal space */
+	list-style: none;
+	padding: 0;
+	margin: 0 0 2rem 0;                        /* Bottom spacing before the next heading */
+  }
+  
+  /* Fix for standard template list styling if needed */
+  .two-col-samples li {
+	padding-left: 0 !important;                /* Removes template default indented padding */
+	margin-bottom: 0;
+  }
+
+  /* --- RESPONSIVE MOBILE FEED OVERRIDES --- */
+  @media screen and (max-width: 736px) {
+	.two-col-samples {
+	  grid-template-columns: 1fr !important; /* Stacks sample links back to 1 column on small phone screens */
+	}
+	
+	.event-gallery {
+	  flex-direction: column; /* Collapses media grid into a clean layout block stack */
+	}
+	
+	.pop-out-effect:hover {
+	  transform: scale(1.15); /* Slight scale reduction to prevent mobile screen edge clipping */
+	}
+  }
+
+  /* Custom cursor modification for the background video state */
+.interactive-video-card video {
+	cursor: pointer;
+  }
+  
+  /* Once activated, let standard player UI handle the pointer interactions */
+  .interactive-video-card.activated video {
+	cursor: default;
+  }
+
+  /* --- FIXED CSS CONTAINER EXPANSION --- */
+
+/* --- TEMPLATE-SAFE CONTAINER EXPANSION --- */
+
+/* Safe expansion rules nested cleanly within active section tags */
+#main article.active.expanded-events-view {
+	max-width: 1200px;
+	width: 100%;
+  }
+  
+  #main article.expanded-events-view {
+	width: 100%;
+  }
+  
+  /* Two-column gallery flexbox */
+  .event-gallery {
+	display: flex;
+	gap: 30px; 
+  }
+  
+  .gallery-col {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 25px; 
+  }
+  
+  /* Responsive mobile stack framework overrides */
+  @media screen and (max-width: 736px) {
+	.event-gallery {
+	  flex-direction: column;
+	}
+  }
+  
+
+  /* --- DYNAMIC PRODUCTION GRID --- */
+.production-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); /* Forms 2 permanent equal columns */
+	gap: 30px;                             /* Space between grid items */
+	width: 100%;
+  }
+  
+  /* Base image rules */
+  .production-grid .gallery-card img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 6px 6px 0 0;
+  }
+  
+  /* Caption block framing */
+  .production-grid .card-caption {
+	padding: 12px;
+	background: rgba(255, 255, 255, 0.05); 
+	border-radius: 0 0 6px 6px; 
+	font-size: 0.9rem;
+	font-weight: 500;
+	text-align: center;
+  }
+  
+  /* --- POP OUT EXPANSION ATTACHMENT --- */
+  .pop-out-effect {
+	position: relative;
+	z-index: 1;
+	transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+	transform: scale(1);
+  }
+  
+  /* Enlarges the whole image + caption block smoothly over the background */
+  .pop-out-effect:hover {
+	transform: scale(1.05) !important;
+	z-index: 10;
+	cursor: pointer;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  /* --- MOBILE RESPONSIVE ADAPTATION --- */
+  @media screen and (max-width: 736px) { /* Fits Dimension Mobile Breakpoint */
+	.production-grid {
+	  grid-template-columns: 1fr !important; /* Stacks to a clean 1-column layout on phones */
+	  gap: 20px;
+	}
+	
+	.pop-out-effect:hover {
+	  transform: scale(1.02) !important; /* Prevents overflow clipping on small viewports */
+	}
+  }
+
+
+/* Custom Site Footer Fix */
+#site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.4); /* Dark translucent background to match the theme */
+    backdrop-filter: blur(4px);    /* Optional elegant glass effect */
+    z-index: 10000;                /* Forces it on top of the background layer */
+    font-family: "Poppins", sans-serif;
+}
+
+#site-footer .footer-content p {
+    margin: 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Push the wrapper up slightly so elements don't overlap the fixed footer on mobile */
+#wrapper {
+    padding-bottom: 60px !important;
+}
