@@ -1203,14 +1203,6 @@ input, select, textarea {
 	}
 
 #bg {
-    background-image: url("../../images/w_w_background.jpeg") !important;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-#bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -1601,7 +1593,7 @@ body {
 			position:initial;
 			width: 50rem;
 			max-width: 100%;
-			background-color: #000000;
+			background-color: #fde8ee;
 			border-radius: 6px;
 			opacity: 0;
 		}
@@ -1614,45 +1606,6 @@ body {
 				opacity: 1;
 			}
 
-			#main article .close {
-				display: block;
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 2rem;
-				height: 2rem;
-				cursor: pointer;
-				text-indent: 4rem;
-				overflow: hidden;
-				white-space: nowrap;
-			}
-
-				#main article .close:before {
-					-moz-transition: background-color 0.2s ease-in-out;
-					-webkit-transition: background-color 0.2s ease-in-out;
-					-ms-transition: background-color 0.2s ease-in-out;
-					transition: background-color 0.2s ease-in-out;
-					content: '';
-					display: block;
-					position: absolute;
-					top: 0.75rem;
-					left: 0.75rem;
-					width: 2.5rem;
-					height: .5rem;
-					border-radius: 100%;
-					background-position: center;
-					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
-					background-size: 20px 20px;
-					background-repeat: no-repeat;
-				}
-
-				#main article .close:hover:before {
-					background-color: rgba(255, 255, 255, 0.075);
-				}
-
-				#main article .close:active:before {
-					background-color: rgba(255, 255, 255, 0.175);
-				}
 
 		@media screen and (max-width: 720x) {
 
@@ -1714,6 +1667,43 @@ body {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+/* EVENTS — UPCOMING EVENTS */
+
+   .upcoming-events {
+    width: 100%;
+}
+
+.upcoming-events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.event-card {
+    width: 100%;
+}
+
+.event-card .image {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+.event-card .image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 736px) {
+
+    .upcoming-events-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
 
 
 /* === Creative Portfolio Font === */
@@ -2092,15 +2082,16 @@ ul.samples li a:hover .label {
   
   /* The horizontal scroll track */
   .carousel {
-	display: flex;
-	overflow-x: auto;
-	scroll-behavior: smooth;
-	scroll-snap-type: x mandatory; /* Forces alignment to slides */
-	scrollbar-width: none; /* Hides default scrollbar for Firefox */
-	-ms-overflow-style: none;  /* Hides default scrollbar for IE/Edge */
-	border-radius: 8px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
   
   /* Hides default scrollbar for Chrome, Safari, and Opera */
   .carousel::-webkit-scrollbar {
@@ -2115,12 +2106,13 @@ ul.samples li a:hover .label {
   }
   
   /* Ensures images fill the container proportionately */
-  .slide img {
-	width: 100%;
-	height: auto;
-	display: block;
-	object-fit: cover;
-	aspect-ratio: 16 / 9; /* Maintains unified dimensions across frames */
+  .slide img,
+  .slide video {
+	  width: 100%;
+	  height: auto;
+	  display: block;
+	  object-fit: cover;
+	  aspect-ratio: 16 / 9;
   }
   
   /* Navigation dots wrapper */
@@ -2170,28 +2162,4 @@ ul.samples li a:hover .label {
 /* Push the wrapper up slightly so elements don't overlap the fixed footer on mobile */
 #wrapper {
     padding-bottom: 60px !important;
-}
-
-/* Remove excess space before the main content */
-
-#main {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-}
-
-#main > article:first-child {
-    margin-top: 0 !important;
-}
-
-#main > article:first-child::before {
-    display: none !important;
-}
-
-#header {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-#main {
-    margin-top: 0 !important;
 }
