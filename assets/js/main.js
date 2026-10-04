@@ -390,6 +390,10 @@
 			// Hide main, articles.
 				$main.hide();
 				$main_articles.hide();
+				console.log('INIT RUNNING', $main.length, $main_articles.length);
+console.log('ARTICLES:', $main_articles.map(function() {
+    return this.id;
+}).get());
 
 			// Initial article.
 				if (location.hash != ''
@@ -398,18 +402,7 @@
 						$main._show(location.hash.substr(1), true);
 					});
 
-		// Initialize.
 
-			// Hide main, articles.
-			$main.hide();
-			$main_articles.hide();
-
-		// Initial article.
-			if (location.hash != ''
-			&&	location.hash != '#')
-				$window.on('load', function() {
-					$main._show(location.hash.substr(1), true);
-				});
 
 	// --- ADDED BY YOU: INTERACTIVE AUTOPLAY/UNMUTE VIDEOS ---
 	$('.interactive-video-card').on('click', function() {
