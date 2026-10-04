@@ -1306,6 +1306,7 @@ body {
 		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
 		max-width: 100%;
 		text-align: center;
+		padding-top: 3rem;
 	}
 
 		#header > * {
