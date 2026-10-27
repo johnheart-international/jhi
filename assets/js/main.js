@@ -404,6 +404,73 @@ console.log('ARTICLES:', $main_articles.map(function() {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const lightbox = document.getElementById("eventVideoLightbox");
+    const player = document.getElementById("eventLightboxPlayer");
+    const closeButton = lightbox.querySelector(".video-lightbox-close");
+    const triggers = document.querySelectorAll(".video-lightbox-trigger");
+
+    function openVideo(trigger) {
+        const videoSrc = trigger.dataset.videoSrc;
+
+        if (!videoSrc) return;
+
+        player.src = videoSrc;
+        lightbox.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+
+        player.load();
+
+        const playPromise = player.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(function () {
+                // If autoplay is blocked, the visitor can press Play.
+            });
+        }
+    }
+
+    function closeVideo() {
+        player.pause();
+        player.removeAttribute("src");
+        player.load();
+
+        lightbox.classList.remove("is-open");
+        document.body.style.overflow = "";
+    }
+
+    triggers.forEach(function (trigger) {
+        trigger.addEventListener("click", function () {
+            openVideo(trigger);
+        });
+
+        trigger.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openVideo(trigger);
+            }
+        });
+    });
+
+    closeButton.addEventListener("click", closeVideo);
+
+    lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+            closeVideo();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (
+            event.key === "Escape" &&
+            lightbox.classList.contains("is-open")
+        ) {
+            closeVideo();
+        }
+    });
+});
+
+
 	// --- ADDED BY YOU: INTERACTIVE AUTOPLAY/UNMUTE VIDEOS ---
 	$('.interactive-video-card').on('click', function() {
 		var $card = $(this);
