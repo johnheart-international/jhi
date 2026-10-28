@@ -700,7 +700,7 @@ input, select, textarea {
     display: block;
     width: 100%;
 	max-width: none;
-    height: auto;
+    height: 80%;
     margin: 0;
     padding: 0;
 }
@@ -1496,93 +1496,6 @@ body {
 
 		}
 
-/* =========================================
-   HOMEPAGE PROMOTIONAL VIDEO
-   ========================================= */
-
-   .promo-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
-    max-width: 1100px;
-    margin: 4rem auto;
-    padding: 3rem 2rem;
-}
-
-.promo-content {
-    flex: 1;
-    max-width: 520px;
-}
-
-.promo-eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.promo-content h2 {
-    font-size: 2.4rem;
-    line-height: 1.2;
-    margin-bottom: 1.25rem;
-}
-
-.promo-content p {
-    line-height: 1.8;
-}
-
-.promo-button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.85rem 1.5rem;
-    border: 1px solid currentColor;
-    text-decoration: none;
-    transition: background 0.3s ease,
-                color 0.3s ease;
-}
-
-.promo-button:hover {
-    background: #000;
-    color: #fff;
-}
-
-.promo-video-container {
-    flex: 0 1 340px;
-    width: 100%;
-    max-width: 340px;
-}
-
-.promo-video {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 9 / 16;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Mobile layout */
-@media screen and (max-width: 736px) {
-    .promo-section {
-        flex-direction: column;
-        gap: 2rem;
-        margin: 2rem auto;
-        padding: 2rem 1.25rem;
-        text-align: center;
-    }
-
-    .promo-content h2 {
-        font-size: 1.9rem;
-    }
-
-    .promo-video-container {
-        flex: none;
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
 /* Main */
 
 #main {
@@ -1901,6 +1814,39 @@ ul.samples li a:hover .label {
 	100% {
 	  transform: translateX(-100%);
 	}
+  }
+
+  /* Homepage promotional video thumbnail */
+  .promo-video-container {
+    width: calc(100% - 2rem);
+    max-width: 970px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    margin: 2rem auto;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  /* Portrait video preview */
+  .promo-video-container video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: inherit;
+  }
+  
+  /* Keep the play overlay centered */
+  .promo-video-container .video-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
  /* --- EVENTS WITH TWO COLUMNS --- */
