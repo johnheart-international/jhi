@@ -296,12 +296,21 @@
 											<img src="images/lrc_royal_palms_wolf.jpg" alt="">
 										</div>
 
-										<div class="event-grid-item">
-											<video autoplay loop muted playsinline>
+										<div class="event-grid-item video-lightbox-trigger"
+										data-video-src="videos/lrc_royal_palms_partyoverview.mp4"
+										role="button"
+										tabindex="0"
+										aria-label="Play Lauderdale Run Club event video">
+
+											<video muted playsinline preload="metadata"
+												poster="videos/lrc_royal_palms_wolf2.jpg">
 												<source src="videos/lrc_royal_palms_partyoverview.mp4"
 														type="video/mp4">
-												Your browser does not support the video tag.
 											</video>
+
+											<span class="video-play-overlay" aria-hidden="true">
+												<span class="video-play-icon">▶</span>
+											</span>
 										</div>
 
 									</div>
