@@ -1768,7 +1768,7 @@ body.is-article-visible #main article {
 
 .upcoming-events-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
     width: 100%;
 }
@@ -1885,7 +1885,7 @@ ul.samples li a:hover .label {
 	gap: 50px; /* Space between announcements */
 	padding-right: 50px; /* Must match the gap size */
 	white-space: nowrap;
-	animation: scroll-left 60s linear infinite;
+	animation: scroll-left 68s linear infinite;
   }
   
   /* 4. Pause the banner movement when a user hovers over it */
