@@ -1798,7 +1798,7 @@ ul.samples li a:hover .label {
 	gap: 50px; /* Space between announcements */
 	padding-right: 50px; /* Must match the gap size */
 	white-space: nowrap;
-	animation: scroll-left 68s linear infinite;
+	animation: scroll-left 57s linear infinite;
   }
   
   /* 4. Pause the banner movement when a user hovers over it */
